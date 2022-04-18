@@ -1,0 +1,35 @@
+
+
+body{
+	background-image: url(imagens/doom_background.gif);
+	background-size: cover;
+}
+div{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;	
+}
+#fonte{
+	border: none;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+table{
+	
+	color: #0000FF;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#see{
+	position: relative;
+	left: -750px;
+}
+#end{
+	position: relative;
+	left: -650px;
+}
+
+
+
