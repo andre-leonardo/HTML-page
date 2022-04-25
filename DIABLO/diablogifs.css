@@ -1,8 +1,23 @@
 body{
     background-image: url(imagens/background.png);
     background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
 }
 h1{
     background-color: red;
     
+}
+table img{
+    
+    height: auto;
+    width: 100%;
+}
+div img{
+    height: auto;
+    width: 100%;
+    max-width: 500px;
+}
+#pentagrama{
+    max-width: 100px;
 }

@@ -34,32 +34,34 @@ body{
   font-family: cursive;
   color: black;
 }
-video{
-  position: relative;
-  left: 100px;
-  top: -1100px;
-}
-#bucket{
-  position: absolute;
-  left: -350px;
-  
-}
-#top{
-  position: relative;
-  left: 800px;
-  background-image: url(imagens/chicken.gif);
+.top{
+  display: flex;
+  justify-content: center;
   border-style: outset;
+  border:red;
 }
-#bar{
-  position: relative;
-  left: 500px;
+.barra{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 #check{
 position: relative;
 left: 50px;
 top: -370px;
 }
-
+.bucket{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.musica{
+  display: flex;
+  height: auto;
+  width: 100%;
+}
 
 
 
