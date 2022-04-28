@@ -1,3 +1,14 @@
+ul {
+  display: flex;
+  vertical-align: middle;
+  justify-content: space-evenly;
+  list-style-type: none;
+  margin: auto;
+  padding: 50px;
+}
+li a{
+  font-size: 50px;
+}
 .center{
     display: block;
   margin-left: auto;
