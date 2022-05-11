@@ -10,34 +10,30 @@
 </head>
 <div class="div">
 <body>
-    <ul>
-        <li><a href="default.asp">Home</a></li>
-        <li><a href="news.asp">News</a></li>
-        <li><a href="contact.asp">Contact</a></li>
-        <li><a href="about.asp">About</a></li>
-    </ul>
-    <div class="container">
-        <div class="row align-items-start">
-          <div class="col">
-            One of three columns
+    <button onclick=play();><img src="imagens/music.png" class="musica" alt=""></button>
+    <div class="navbar">
+        <a href="subscribe/sub.html">Subscribe</a>
+        <div class="dropdown">
+            <button class="dropbtn">Artists
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="https://www.youtube.com/watch?v=Dp6LT2MdaPI" target="_blank">Frank Zappa</a>
+              <a href="https://www.youtube.com/watch?v=mBlkl83uETY" target="_blank">Jack Marmota</a>
+              <a href="https://www.youtube.com/watch?v=N2_JqJHt0K0" target="_blank">Senhor das Trevas</a>
+            </div>
           </div>
-          <div class="col">
-            One of three columns
-          </div>
-          <div class="col">
-            One of three columns
+
+        <div class="dropdown">
+          <button class="dropbtn">Snoopdog
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <img src="imagens/snoopdog.gif" alt="">
           </div>
         </div>
-    <button onclick=play();><img src="imagens/music.png" class="musica" alt=""></button>
-
-    <script>
-    var audio = new Audio();
-    audio.src = "musica/trance.mp3";
+      </div>
     
-    function play() {
-    audio.play();
-    }
-    </script>
 
 <table class="cent">
     <tr>
@@ -55,7 +51,7 @@ height="130" class="center"/>
     <tr>
         <th>
             <h2>In this site you will see old things(and some extras)<br/><br/><br/><br/><br/>
-                The idea is simple, putting things, it doesn't have to make any real sense
+                The idea is simple, putting things, it doesn't make any real sense
                  at all, just a web page</h2>
                 <h1 id="oldgifs" style="font-size: 100px;";">OLD GAMES GIFS</h1>
 
@@ -71,7 +67,6 @@ height="130" class="center"/>
 <table border="10px" class="top" >
 
 <tr><th>
-    
     <a href="https://www.youtube.com/watch?v=WnaiqoTZ5r4&t" target="_blank"><img src="imagens/pike1.jpg" alt=""width="200px" height="197px"></a><h1>#1 It's Alive</h1></th>
     <th><a href="https://www.youtube.com/watch?v=C2ApUj96wOg" target="_blank"><img src="imagens/pike2.jpg" alt=""width="200px" height="197px"></a><h1>#2 Celery</h1></th></tr>
     <tr><th><a href="https://www.youtube.com/watch?v=HAM91k4P7Y4&t" target="_blank"><img src="imagens/pike3.jpg" alt=""width="200px" height="197px"></a><h1>#3 Project Little Man</h1></th>
@@ -84,16 +79,7 @@ height="130" class="center"/>
                 <th><a href="https://www.youtube.com/watch?v=8Rt-oddBlDA&list=PL3I1hmT4-LnAIWr2LmDfUioPxRmgGrdFT" target="_blank"><img src="imagens/pike10 .jpg" alt=""width="200px" height="197px"></a><h1>#10 Shaded Ray</h1></th></tr>
 </table>
 
-<video width="300px" height="300px" 
-    controls="controls"> 
-      
-    <source src="imagens/rock.mp4" 
-        type="video/mp4"> <p>grizzly</p>
-</video>
-<img src="imagens/snoopdog.gif" alt="">
-<input id="check" type="button" value="Click Here For A Brain Seizure" class="GE" id="GELSEWHERE" 
-  onClick="Javascript:window.location.href = '../Epilepsy/lsd.html';" />
-
+<script src="mainpage.js"></script>
 
 </body>
 </div>
