@@ -15,8 +15,9 @@ li a{
   margin-right: auto;
 }
 h1{
+    font-size: 20px;
     text-align: center;
-    color: #039e27;
+    color: #000;
 }
 h2{
     text-align: left;
@@ -47,7 +48,6 @@ body{
 }
 .top{
   display: flex;
-  justify-content: center;
   border-style: outset;
   border:red;
 }
@@ -65,8 +65,12 @@ top: -370px;
 }
 .bucket{
   display: flex;
-  margin-left: auto;
   margin-right: auto;
+}
+.topten{
+  background-color: red;
+  width: 450px;
+  border: 5px solid gray;
 }
 .musica{
   display: flex;
