@@ -25,10 +25,12 @@ h2{
     font-family: monospace;
     color: white;
 }
+h3{
+  color: green;
+  font-size: 25px;
+}
 body{
-    background-color: black;
-    background-image: url(imagens/pacman.gif);
-    background-size: cover;
+  background-color: black;
 }
 .cente{
   margin-left: auto;
@@ -71,6 +73,8 @@ top: -370px;
   background-color: red;
   width: 450px;
   border: 5px solid gray;
+  margin-right: 53px;
+  float: left;
 }
 .musica{
   display: flex;
@@ -130,11 +134,22 @@ top: -370px;
   display: block;
   text-align: left;
 }
-
 .dropdown-content a:hover {
   background-color: #ddd;
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.runescape{
+  margin-right: auto;
+  margin-left: auto;
+  height: auto;
+  max-height:800px;
+  max-width: 600px;
+  padding: 20px;
+}
+#osrs_text{
+  font-size: 20px;
+  color: green;
+}
+
