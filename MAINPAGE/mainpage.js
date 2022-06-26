@@ -98,6 +98,8 @@ function mudarResolucaoCastle(){
 document.getElementById("botaoCalculo").addEventListener('click', decimalToBinario)
 document.getElementById("botaoCalculoOct").addEventListener('click', decimalToOctal)
 
+let regExp = /[a-zA-Z]/g;
+
 function decimalToBinario(){
     
     let calculo = document.getElementById("numero").value;
@@ -106,28 +108,36 @@ function decimalToBinario(){
     parseInt(arredondar);
     let resultado = [];
     let resultadoPrint = "";
-do
-    {
-        if(arredondar % 2 == 0)
-        {
-            resultado.push(0);
-        }
-        else
-        {
-            resultado.push(1);
-        }
-        arredondar = arredondar / 2;
-        arredondar = arredondar.toString().split('.')[0];
-        parseInt(arredondar);
-    }
-    while(arredondar != 0 )
 
-    
-    for(let i = resultado.length-1; i >= 0; i--){
-        resultadoPrint+=resultado[i]
+    if(regExp.test(arredondar)){
+        resultadoPrint = "Not a number"
+        document.getElementById('resultadoBinario').innerHTML = '';
+        resposta.append(resultadoPrint)
     }
-    document.getElementById('resultadoBinario').innerHTML = '';
-    resposta.append(resultadoPrint)
+    else{
+        do
+        {
+            if(arredondar % 2 == 0)
+            {
+                resultado.push(0);
+            }
+            else
+            {
+                resultado.push(1);
+            }
+            arredondar = arredondar / 2;
+            arredondar = arredondar.toString().split('.')[0];
+            parseInt(arredondar);
+        }
+        while(arredondar != 0 )
+
+        
+        for(let i = resultado.length-1; i >= 0; i--){
+            resultadoPrint+=resultado[i]
+        }
+        document.getElementById('resultadoBinario').innerHTML = '';
+        resposta.append(resultadoPrint)
+    }   
 }
 
 function decimalToOctal(){
@@ -138,67 +148,94 @@ function decimalToOctal(){
     parseInt(arredondar);
     let resultado = [];
     let resultadoPrint = "";
-do
-    {
-        if(arredondar % 8 == 0)
-        {
-            resultado.push(0);
-        }
-        else if(arredondar % 8 == 1)
-        {
-            resultado.push(1);
-        }
-        else if(arredondar % 8 == 2)
-        {
-            resultado.push(2);
-        }
-        else if(arredondar % 8 == 3)
-        {
-            resultado.push(3);
-        }
-        else if(arredondar % 8 == 4)
-        {
-            resultado.push(4);
-        }
-        else if(arredondar % 8 == 5)
-        {
-            resultado.push(5);
-        }
-        else if(arredondar % 8 == 6)
-        {
-            resultado.push(6);
-        }
-        else if(arredondar % 8 == 7)
-        {
-            resultado.push(7);
-        }
-        arredondar = arredondar / 8;
-        arredondar = arredondar.toString().split('.')[0];
-        parseInt(arredondar);
+    if(regExp.test(arredondar)){
+        resultadoPrint = "Not a number"
+        document.getElementById('resultadoOctal').innerHTML = '';
+        resposta.append(resultadoPrint)
     }
-    while(arredondar != 0 )
+    else{
+        do
+        {
+            if(arredondar % 8 == 0)
+            {
+                resultado.push(0);
+            }
+            else if(arredondar % 8 == 1)
+            {
+                resultado.push(1);
+            }
+            else if(arredondar % 8 == 2)
+            {
+                resultado.push(2);
+            }
+            else if(arredondar % 8 == 3)
+            {
+                resultado.push(3);
+            }
+            else if(arredondar % 8 == 4)
+            {
+                resultado.push(4);
+            }
+            else if(arredondar % 8 == 5)
+            {
+                resultado.push(5);
+            }
+            else if(arredondar % 8 == 6)
+            {
+                resultado.push(6);
+            }
+            else if(arredondar % 8 == 7)
+            {
+                resultado.push(7);
+            }
+            arredondar = arredondar / 8;
+            arredondar = arredondar.toString().split('.')[0];
+            parseInt(arredondar);
+        }
+        while(arredondar != 0 )
 
-    
-    for(let i = resultado.length-1; i >= 0; i--){
-        resultadoPrint+=resultado[i]
+        
+        for(let i = resultado.length-1; i >= 0; i--){
+            resultadoPrint+=resultado[i]
+        }
+        document.getElementById('resultadoOctal').innerHTML = '';
+        resposta.append(resultadoPrint)
     }
-    document.getElementById('resultadoOctal').innerHTML = '';
-    resposta.append(resultadoPrint)
 }
 
 document.getElementById("botaoCalculoDec").addEventListener('click', binarioToDecimal)
 
 function binarioToDecimal(){
+    let resposta = document.getElementById("resultadoDecimal");
+    let resultadoPrint = "";
     let calculo = document.getElementById("numeroDec").value;
     calculoArr = Array.from(String(calculo), Number);
     calculoArr.reverse();
-    let soma = 0;
-    let potencia = 0;
-    for (let i = calculoArr.length-1; i >= 0; i--){
-        if(calculoArr[i] == 1){
-        potencia = Math.pow(2, i);
-        soma=potencia+soma;
-        }
+    if(regExp.test(calculoArr)){
+        resultadoPrint = "Not a number";
+        document.getElementById('resultadoDecimal').innerHTML = '';
+        resposta.append(resultadoPrint)
     }
-    console.log(soma)
+    else if(calculoArr.includes(2) || calculoArr.includes(3) || calculoArr.includes(4) || calculoArr.includes(5) || calculoArr.includes(6) || calculoArr.includes(7) || calculoArr.includes(8) || calculoArr.includes(9)){
+        resultadoPrint = "Not a binary number";
+        document.getElementById('resultadoDecimal').innerHTML = '';
+        resposta.append(resultadoPrint)
+    }
+    else{
+        let soma = 0;
+        let potencia = 0;
+        for (let i = calculoArr.length-1; i >= 0; i--){
+            if(calculoArr[i] == 1){
+                potencia = Math.pow(2, i);
+                soma=potencia+soma;
+            }
+        }
+        somaArr = Array.from(String(soma), Number);
+        somaArr.reverse();
+        for(let i = somaArr.length-1; i >= 0; i--){
+            resultadoPrint+=somaArr[i]
+        }
+        document.getElementById('resultadoDecimal').innerHTML = '';
+        resposta.append(resultadoPrint)
+        }
 }
