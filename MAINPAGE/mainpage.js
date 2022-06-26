@@ -1,12 +1,18 @@
-document.getElementById("banana").addEventListener("mouseover", bananaParaPatches)
-document.getElementById("banana").addEventListener("mouseout", patchesParaBanana)
+document.getElementById("banana").addEventListener("mouseover", bananaParaPenguim)
+document.getElementById("banana").addEventListener("mouseout", bananaParaPenguim)
+let contBananas = 0;
 
-function bananaParaPatches(){
-    document.getElementById("banana").src = "imagens/penguim.gif";
+function bananaParaPenguim(){
+    if(contBananas % 2 == 0){
+        document.getElementById("banana").src = "imagens/penguim.gif";
+        contBananas++;
+    }
+    else {
+        document.getElementById("banana").src = "imagens/banana.gif";
+        contBananas++;
+    }
 }
-function patchesParaBanana(){
-    document.getElementById("banana").src = "imagens/banana.gif";
-}
+
 
 document.getElementById("botaoBackground").addEventListener("click", mudarFundo)
 
@@ -33,6 +39,58 @@ function bemVindo() {
     document.getElementById('nomeRegistrado').innerHTML = nome;
     if(nome==null){
         document.getElementById("nomeUser").style.visibility = "hidden";
+    }
+}
+
+document.getElementById("logoDoom").addEventListener('mouseover', mudarResolucaoDoom)
+document.getElementById("logoDoom").addEventListener('mouseout', mudarResolucaoDoom)
+
+document.getElementById("logoDiablo").addEventListener('mouseover', mudarResolucaoDiablo)
+document.getElementById("logoDiablo").addEventListener('mouseout', mudarResolucaoDiablo)
+
+document.getElementById("logoCastle").addEventListener('mouseover', mudarResolucaoCastle)
+document.getElementById("logoCastle").addEventListener('mouseout', mudarResolucaoCastle)
+
+let contDoom=0;
+let contDiablo=0;
+let contCastle=0;
+
+function mudarResolucaoDoom(){
+    if(contDoom % 2 == 0){
+        document.getElementById("logoDoom").style.width = "300px";
+        document.getElementById("logoDoom").style.height = "143px";
+        contDoom++;
+    }
+    else{
+        contDoom++;
+        document.getElementById("logoDoom").style.width = "200px";
+        document.getElementById("logoDoom").style.height = "95px";
+    }
+}
+
+function mudarResolucaoDiablo(){
+    if(contDiablo % 2 == 0){
+        document.getElementById("logoDiablo").style.width = "320px";
+        document.getElementById("logoDiablo").style.height = "180px";
+        contDiablo++;
+    }
+    else{
+        contDiablo++;
+        document.getElementById("logoDiablo").style.width = "250px";
+        document.getElementById("logoDiablo").style.height = "141px";
+    }
+}
+
+function mudarResolucaoCastle(){
+    if(contCastle % 2 == 0){
+        document.getElementById("logoCastle").style.width = "320px";
+        document.getElementById("logoCastle").style.height = "180px";
+        contCastle++;
+    }
+    else{
+        contCastle++;
+        document.getElementById("logoCastle").style.width = "250px";
+        document.getElementById("logoCastle").style.height = "141px";
     }
 }
 
@@ -126,4 +184,21 @@ do
     }
     document.getElementById('resultadoOctal').innerHTML = '';
     resposta.append(resultadoPrint)
+}
+
+document.getElementById("botaoCalculoDec").addEventListener('click', binarioToDecimal)
+
+function binarioToDecimal(){
+    let calculo = document.getElementById("numeroDec").value;
+    calculoArr = Array.from(String(calculo), Number);
+    calculoArr.reverse();
+    let soma = 0;
+    let potencia = 0;
+    for (let i = calculoArr.length-1; i >= 0; i--){
+        if(calculoArr[i] == 1){
+        potencia = Math.pow(2, i);
+        soma=potencia+soma;
+        }
+    }
+    console.log(soma)
 }

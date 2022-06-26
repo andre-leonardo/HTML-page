@@ -169,16 +169,12 @@ top: -370px;
   padding-right: 10px;
 }
 
-#resultadoBinario
+.resultado
 {
     font-size: 25px;
     color: red;
 }
-#resultadoOctal
-{
-    font-size: 25px;
-    color: red;
-}
+
 
 .calculadora
 {
